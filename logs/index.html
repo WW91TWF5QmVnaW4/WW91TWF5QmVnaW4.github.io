@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LOGS ACCESS</title>
+<style>
+body {
+  background: black;
+  color: #0a0;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 15vh;
+}
+
+h1 {
+  font-size: 2em;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0%, 49%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.5; }
+}
+
+.hidden {
+  opacity: 0.02;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 0.9em;
+}
+
+.subtle {
+  opacity: 0.05;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 0.9em;
+}
+</style>
+
+<script>
+const password = "JVZ";
+
+function checkPassword() {
+  const attempt = prompt("ENTER OBSERVER KEY:");
+  if (attempt === password) {
+    document.getElementById("logs").style.display = "block";
+    document.getElementById("locked").style.display = "none";
+  } else {
+    alert("ACCESS DENIED");
+  }
+}
+</script>
+
+</head>
+<body onload="checkPassword()">
+
+<div id="locked">
+  <h1>LOGS LOCKED</h1>
+  <p>You must enter the correct access code to view these files.</p>
+</div>
+
+<div id="logs" style="display:none;">
+  <h1>SECRET LOGS</h1>
+  <p>Observer Status: ACTIVE</p>
+  <p>Signal Interference: ██%</p>
+  <p>Next clue: 546865204d61736b2069732068657265</p> <!-- Hex: "The Mask is here" -->
+
+  
+  <p class="hidden">FOLLOW THE PATTERN OF SHADOWS</p>
+  <p class="hidden">VIZION IS WATCHING</p>
+  <p class="hidden" style="bottom: 80px; left: 20%;">THE SIGNAL IS FRACTURED</p>
+  <p class="hidden" style="top: 50%; left: 10%;">.ecalp eht peek ot uoy era</p>
+  <p class="subtle">key fragment: 42 4c 4b</p> <!-- Hex: "BLK" -->
+
+  <!-- THEY WATCH FROM BEHIND THE LIGHT -->
+  <!-- THE MASK MOVES SILENTLY -->
+  <!-- UmV0cmFjZSB5b3VyIHN0ZXBzLg --> 
+  <!-- NEVER TURN BACK -->
+  <!-- OBSERVE AND REPORT -->
+
+</div>
+
+</body>
+</html>
